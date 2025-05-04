@@ -1,0 +1,9 @@
+build:
+  docker:
+    web: Dockerfile
+run:
+  web: gunicorn app:app
+  worker:
+    command:
+      - python app.py
+    image: web
