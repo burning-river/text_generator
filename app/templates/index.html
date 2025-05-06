@@ -1,33 +1,74 @@
 <!DOCTYPE html>
-<html >
-<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ML API</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Generator</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #2c3e50;
+      height: 100vh;
+      padding-top: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar a {
+      display: block;
+      color: #ecf0f1;
+      padding: 12px 20px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #34495e;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+  </style>
 </head>
-
 <body>
- <div class="login">
-	<h1>Summarize Reddit Text</h1>
+  <div class="sidebar">
+    <a href="https://github.com/burning-river/text_generator" target="_blank">Source Code</a>
+    <a href="https://www.linkedin.com/in/saurabhkumar3400" target="_blank">LinkedIn</a>
+    <a href="mailto:saurabhkumar3400@gmail.com">Contact</a>
+  </div>
 
-     <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="Reddit text" placeholder="Reddit text" required="required" />
-
-        <button type="submit" class="btn btn-primary btn-block btn-large">Summarize</button>
+  <div class="main-content">
+    <h1>Generate text using keywords</h1>
+    <p>Enter keywords below to generate text.</p>
+    
+     <div class="form">
+    <form action="{{ url_for('predict')}}"method="post" id="keywords">
+        <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
     </form>
+    <textarea form ="keywords" name="taname" id="taid" cols="35" wrap="soft"></textarea>
 
    <br>
    <br>
+      <h1>Input Text </h1>
+   {{ input_text }}
+
+   <br>
+   <br>
+   <h1>Generated Text </h1>
    {{ prediction_text }}
 
  </div>
 
+  </div>
+  
 
 </body>
 </html>
+
