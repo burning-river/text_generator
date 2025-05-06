@@ -1,1 +1,1 @@
-# text_summarizer
+# Text Generator
