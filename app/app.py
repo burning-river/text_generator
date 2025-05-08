@@ -28,7 +28,7 @@ def predict():
     generated_text = ''
     for sentence in sentences:
         delimiter = sentence[-1]
-        input_ids = dwnld_tokenizer(sentence[:-1], return_tensors="pt").input_ids
+        input_ids = dwnld_tokenizer("generate: " + sentence[:-1], return_tensors="pt").input_ids
         output_tokens = dwnld_model.generate(input_ids, max_length=50, num_return_sequences=1)
         output = dwnld_tokenizer.decode(output_tokens[0], skip_special_tokens=True)
         generated_text += output + delimiter + ' '
