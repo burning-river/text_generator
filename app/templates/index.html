@@ -41,14 +41,31 @@
   <div class="sidebar">
     <a href="https://github.com/burning-river/text_generator" target="_blank">Source Code</a>
     <a href="https://www.linkedin.com/in/saurabhkumar3400" target="_blank">LinkedIn</a>
-    <a href="mailto:saurabhkumar3400@gmail.com">Contact</a>
+    <a href="mailto:saurabhkumar3400@gmail.com">Share Your Thoughts</a>
   </div>
 
   <div class="main-content">
-    <h1>Generate text using keywords</h1>
-    <p>Enter keywords below to generate text.</p>
+    <h1>Keywords-to-Text Generator</h1>
+    <p style="background-color:AliceBlue;"> This app is still in its development phase. More improvement is underway.</p>
+    <p style="background-color:LightGoldenRodYellow;"> Enter keywords below to generate text. 
+    Keywords must be separated by space. 
+    To generate multiple sentences, use punctuation symbols to separate keywords.
+    The model performs best on generating conversational/informal style text.</p>
+    <p style="background-color:AliceBlue;"> <b> For best results, input 2-5 keywords. </b> </p>
     
-     <div class="form">
+    <h1>Examples</h1>
+    <p style="background-color:LightGoldenRodYellow;"> Keywords: Looking build PC gaming.
+   <br> Generated Text: Looking to build a PC for gaming.
+   <br> Ground truth: Looking to build first PC for gaming.
+   </p>
+   
+    <p style="background-color:AliceBlue;"> Keywords: Apparently thing.
+    <br> Generated Text: Apparently this is a thing.
+    <br> Ground truth: Apparently it's a thing.
+   </p>
+   
+       <h1>Enter keywords below</h1>
+  <div class="form">
     <form action="{{ url_for('predict')}}"method="post" id="keywords">
         <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
     </form>
