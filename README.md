@@ -8,4 +8,6 @@ Welcome to the GitHub repository for the keywords-to-text generator web app. In 
 
 [preprocess_dataset.ipynb](https://github.com/burning-river/text_generator/blob/main/preprocess_dataset.ipynb): Code that cleans up the text data. It removes any non-ascii characters in the text and prepares the dataset for LLM fine-tuning.
 
-[model_dev.ipynb](https://github.com/burning-river/text_generator/blob/main/model_dev.ipynb)
+[model_dev.ipynb](https://github.com/burning-river/text_generator/blob/main/model_dev.ipynb): Extracts keywords from sentences which form the features for the dataset. The sentences form the ground truth. The features and the ground truth are then tokenized using the `t5-small` tokenizer.
+
+[train_text_generator.ipynb](https://github.com/burning-river/text_generator/blob/main/train_text_generator.ipynb): Contains code to fine-tune the T5-small LLM model (60.5 million parameters) using 126,000 short sentences (containing 3 to 7 words). The trained model is pushed to the Hugging Face feature store. We evaluate the model on the test set using the BERT scores. We obtain a median F1 score of 0.89. 
