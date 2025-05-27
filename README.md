@@ -1,4 +1,11 @@
 # Keywords-to-text Generator
 Welcome to the GitHub repository for the keywords-to-text generator web app. In this application, still under development, we help users by generating syntactically correct text from keywords. In the current version of the app, users can input 2-5 keywords to generate conversational style text. The app isn't currently well suited to generate longer sentences. This issue will be addressed in the future.
 
-# Codes
+# Files and Codes
+[requirements.txt](https://github.com/burning-river/text_generator/blob/main/requirements.txt): List of dependencies for the development if the app. Use `pip install -r requirements.txt` to install.
+
+[scrape_web.ipynb](https://github.com/burning-river/text_generator/blob/main/scrape_web.ipynb): Contains code that creates the dataset for the app. We download human entered posts on Reddit using the Reddit API. They are then split into sentences. In total, there are 1.84 million sentences. 
+
+[preprocess_dataset.ipynb](https://github.com/burning-river/text_generator/blob/main/preprocess_dataset.ipynb): Code that cleans up the text data. It removes any non-ascii characters in the text and prepares the dataset for LLM fine-tuning.
+
+[model_dev.ipynb](https://github.com/burning-river/text_generator/blob/main/model_dev.ipynb)
